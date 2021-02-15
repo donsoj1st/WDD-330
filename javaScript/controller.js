@@ -34,7 +34,7 @@ function removeTodo( event ){
 
 
 		completeButton.addEventListener('click',function(){
-			console.log(123);
+
 			view(taskLt.taskCompleted());
 		});
 		activeButton.addEventListener('click',function(){
