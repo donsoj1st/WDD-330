@@ -134,4 +134,3 @@ class task{
 			taskLt.deleteElement(event.id);
 			view(taskLt.allTask());
 		}
-		
