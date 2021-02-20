@@ -19,8 +19,6 @@ export default	function view(ListItems){
 					button.appendChild(document.createTextNode('X'));
 					text.appendChild(document.createTextNode(ListItems[i].task));
 					input.setAttribute('type','checkbox');
-					input.setAttribute('onclick','check(this)');
-					button.setAttribute('onclick','removeTodo(this)');
 					div.setAttribute('id',i);
 					input.setAttribute('id',i);
 					button.setAttribute('id',i);

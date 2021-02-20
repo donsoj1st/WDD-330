@@ -1,5 +1,8 @@
-import view from './view.js'
-import task, {taskList}from './model.js'
+import view from './view.js';
+import task, {taskList}from './model.js';
+
+const taskLt = new taskList();
+const item = document.querySelector(".item");
 function check(event){
 			let me = document.getElementById(event.id);
 			
@@ -16,15 +19,24 @@ function check(event){
 				
 			}
 		}
+
+		
 function removeTodo( event ){
-			
-			taskLt.deleteElement(event.id);
-			view(taskLt.allTask());
+	taskLt.deleteElement(event.id);
+	view(taskLt.allTask());
 		}
 
 
-		const taskLt = new taskList();
-		const item = document.querySelector(".item");
+document.querySelector(".todo-itm").addEventListener("click", a, false);
+function a(params) {
+	if (params.target.tagName === "BUTTON") {
+		removeTodo(params.target.id);
+	}
+	else if (params.target.tagName === "INPUT") {
+		check(params.target);
+
+	}
+}
 
 
 		let AlButton = document.querySelector('.All');
