@@ -1,0 +1,46 @@
+<!doctype html>
+<head>
+<style>
+    body {
+
+    }
+
+    img {
+        height: 200px;
+        width: 200px;
+    }
+</style>
+<meta charset="utf8">
+</head>
+
+
+
+
+<body style="background-color: #aa5039be;">
+    <H2 align='center'
+        style="background-color: #771f0c9d; border-radius: 10px; height: 100px; padding-top:50px; color:#250c06be ;">WDD
+        330
+        portportfolio<br>
+        Adekunle Adesoji John<br>
+        WINTER 2021
+    </H2>
+    <section>
+        <img src="https://img.lovepik.com/element/40019/1554.png_860.png" id="cat" style="position: absolute">
+        <img src="https://img.pngio.com/hat-png-transparent-image-pngpix-hatpng-1183_893.png" id="hat"
+            style="position: absolute">
+    </section>
+
+
+    <a href="../index.html""><button  style=" background-color:#250c06be; ">back to home</button></a>
+</body>
+
+
+<script>
+    let cat = document.querySelector(" #cat"); let hat = document.querySelector("#hat"); let angle = 0; let lastTime = null;
+    function animate(time) {
+        if (lastTime != null) angle += (time - lastTime) * 0.001; lastTime = time;
+        cat.style.top = (Math.sin(angle) * 40 + 40) + "px"; cat.style.left = (Math.cos(angle) * 200 + 230) + "px";
+        hat.style.top = (Math.sin(angle + Math.PI) * 40 + 40) + "px"; hat.style.left = (Math.cos(angle + Math.PI) * 200 +
+            230) + "px"; requestAnimationFrame(animate);
+    } requestAnimationFrame(animate);</script>
+</html>

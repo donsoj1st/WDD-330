@@ -47,71 +47,68 @@
             <li>Constant and variable names are case sensitive</li>
 
         </ol>
-        <H3 style="color: #250c06be;">array, set and loops</H3>
+        <H3 style="color: #250c06be;">math object function</H3>
         <ol>
-            <li>An array is an ordered list of values</li>
-            <li>Destructuring an array is the process of taking a value out of an array and representing them as
-                individual value</li>
-            <li>The length property can be used as part of the index to find the last item in an array</li>
-            <li>pop() -used to remove the last item from an array</li>
-            <li>shift()- used to remove the first item from an array</li>
-            <li>push() - used to appends a new item to the end of an array</li>
-            <li>unshift() - used to appends a new item to the beginning of an array</li>
-            <li>concat() - used to merge one or more arrays together</li>
-            <li>join() - used to turn array into a string that comprises all items in the array, separated by commas
-            </li>
-            <li>slice() - creates a subarray, chopping a slice of the original array</li>
-            <li>splice() - removes items from an array and inserts new items in their place</li>
-            <li>reverse() - permanently reverses the order of the array</li>
-            <li>sort() - sort the order of the array</li>
-            <li>multidimensional array - array of arrays</li>
-            <li>Sets: ata structure that represents a collection of unique values, so it cannot include any duplicate
-                values</li>
-            <li>Maps are new in ES6 and are ordered lists of key-value pairs</li>
-            <li>We can use an if and else statement to control the flow of code</li>
-            <li>The switch statement can be used instead of multiple if and else statements</li>
-            <li>A while loop and do ... while loop can be used to repeat a block of code while a condition is still true
-            </li>
-            <li>A for loop works in a similar way to a while loop, but has a different syntax</li>
-            <li>A for-of loop can be used to iterate over an array</li>
-            <li>Sets and maps are enumerable, so thet can be looped over using a for-of loop</li>
+            <li><strong>Math.abs()</strong> method returns the absolute value of a number</li>
+            <li><strong>Math.ceil()</strong> method will round a number up to the next integer, or remain the same if it is already an integer</li>
+            <li><strong>Math.floor()</strong> method will round a numberdownto the next integer, or remain the same if it is already an integer</li>
+            <li><strong>Math.round()</strong> method will round a number to the nearest integer</li>
+            <li><strong>Math.trunc()</strong> method that returns the integer-part of a number – that is, it gets truncated at the decimal point</li>
+            <li><strong>Math.exp()</strong> method will raise a number to the power of Euler’s constant</li>
+            <li><strong>Math.pow()</strong> method will raise number of <strong>the first argument</strong> to the power of the number of 
+            <strong>second argument</strong></li>
+            <li><strong>Math.sqrt()</strong> method returns the positive square root of a number</li>
+            <li><strong>Math.cbrt()</strong> method was introduced in ES6, which returns the cube root of numbers</li>
+            <li><strong>Math.max()</strong> method returns the maximum number from its arguments</li>
+            <li><strong>Math.min()</strong> method unsurprisingly returns the minimum number from the given arguments</li>
         </ol>
-        <H3 style="color: #250c06be;">Function</H3>
+        <H3 style="color: #250c06be;">Event</H3>
         <ol>
-            <li>To define a function literal we can use a function declaration</li>
-            <li>Another way of defining a function literal is to create a function expression</li>
-            <li>A function can also be declared using the constructor Function()</li>
-            <li>If you have assigned a function to a variable, you need to place parentheses after the variable to
-                invoke it as a
-                function</li>
-            <li>All functions return a value, which can be specified using the return statement, which comes after the
-                return
-                keyword</li>
-            <li>any parameters a function needs are set when the function isdefined</li>
-            <li>When a function isinvoked, it is provided with arguments</li>
-            <li>Arrow functions can be identified by the 'arrow' symbol, => that gives them their name</li>
-            <li>Arrow functions are always anonymous, so if you want to refer to them, you must assign them to a
-                variable</li>
-            <li>callback - A function that is passed as an argument to another</li>
-            <li>forEach() - loop through the array and invoke a callback function using each value as an argument</li>
-            <li>map() - it returns a new array that replaces each value with the return value of the callback function
-            </li>
-            <li>reduce() - cumulatively combines each result to return just a single value</li>
-            <li>filter() - returns a new array that only contains items from the original array that return true when
-                passed to the
-                callback</li>
-
+            <li><strong>addEventListener()</strong> method is called on a node object, the node to which the event listener is being applied</li>
+            <li>event can be add to the body of documnet using
+                <strong>document.body.addEventListener('click',doSomething);</strong></li>
+            <li>screenX and screenY properties show the number of pixels from the left and top of the screen respectively 
+                where the event took place</li>
+            <li>clientX and clientY properties show the number of pixels from the left and top of the client that is being used</li>
+            <li> pageX and pageY properties show the number of pixels from the left and top, respectively, where the event took
+                place in the document</li>
+            <li>You should be very cautious of attaching both a <strong>click and doubleclick</strong> event to the same element</li>
+            <li>mousedown and mouseup events</li>
+            <li> there are three events that occur when a user presses a keyboard which are <strong>: keydown , keypress and keyup</strong></li>
+            <li><strong>touchstart</strong> event occurs when a user initially touches the surface</li>
+            <li><strong>touchend</strong> event occurs when a user stops touching the surface</li>
+            <li><strong>touchmove</strong> event occurs after a user has touched the screen then moves around without leaving</li>
+            <li><strong>touchenter</strong> event occurs when a user has already started touching the surface, but then passes over the element to
+                which the event listener is attached</li>
+            <li><strong>touchleave</strong> event occurs when the user is still touching the surface, but leaves the element to which the event
+                listener is attached</li>
+           
         </ol>
-        <H3 style="color: #250c06be;">Arrow functions have some advantages over other ways of declaring functions</H3>
+        <H3 style="color: #250c06be;">Document Object Model - DOM</H3>
         <ul>
-            <li>They are much less verbose than normal function declarations</li>
-            <li>Single parameters don't need putting into parentheses</li>
-            <li>The body of the function doesn't need placing inside a block if it's only one line</li>
-            <li>The return keyword isn't required if the return statement is the only statement in the body of the
-                function</li>
-            <li>They don't bind their own value of this to the function</li><br>
+            <li>All nodes have a numerical code to signify what type they are</li>
+            <li>Node lists are array-like objects, but they are not arrays</li>
+            <li>getElementById() - reference to the element with a unique id attribute </li>
+            <li>getElementsByTagName() - return a live node list of all the elements with the tag name that is provided as an
+                argument</li>
+            <li>getElementsByClassName() - live node list of all elements that have the class name that is supplied as an argument
+            </li>
+            <li> document.querySelector() - use CSS notation to find thefirstelement in the document that matches that matches a CSS
+                selector provided as an argument</li>
+            <li>document.querySelectorAll() - uses CSS notation but returns a node list ofallthe elements in the document that match
+                the CSS query selector</li>
+            <li>jQuery is a popular JavaScript framework that makes it very easy to find elements on a page using a CSS-style syntax
+            </li>
+            <li>childNodes property is a list of all the nodes that are children of the node concerned</li>
+            <li>children property only returns anyelementnodes that are children of that node</li>
+            <li>firstChild property returns the first child of a node</li>
+            <li>lastChild property returns the last child of a node</li>
+            <li>parentNode property returns the parent node of an element</li>
+            <li>nextSibling property returns the next adjacent node of the same parent</li>
+            <li>previousSibling property returns the previous adjacent node</li>
+            <li>createElement() method that takes a tag name as a parameter and returns that element</li>
         </ul>
-        <a href="/index.html""><button  style=" background-color:#250c06be; ">back to home</button></a>
+        <a href="../index.html""><button  style=" background-color:#250c06be; ">back to home</button></a>
 		
 	</section>
 
