@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>To do tracking application</title>
 	<style type="text/css">
-		div{
+		div {
 			margin-right: auto;
 			margin-left: auto;
 			width: 600px;
@@ -12,33 +13,37 @@
 			border-color: #2b1b17;
 			border-width: 10px;
 		}
-		.All:focus{
+
+		.All:focus {
 			background-color: blue;
 		}
-		.active:focus{
+
+		.active:focus {
 			background-color: blue;
 		}
-		.completed:focus{
+
+		.completed:focus {
 			background-color: blue;
 		}
-		.todo-Itm{
-			
+
+		.todo-Itm {
+
 			width: 600px;
 			border-style: double;
 			background-color: pink;
 		}
-		
 	</style>
-
 </head>
-<body>
 
+<body>
 	<header>
 		<h1 style="text-align: center;">TODO list</h1>
 	</header>
-	
+
 	<section class="todo-itm" align="center">
-		<div align="center" style="color: #25383c"><h1>No item yet!!! Add new todo's</h1></div>
+		<div align="center" style="color: #25383c">
+			<h1 class="abd">No item yet!!! Add new todo's</h1>
+		</div>
 	</section>
 	<section class="button" align="center">
 		<p></p>
@@ -46,15 +51,17 @@
 		<button class="active">active</button>
 		<button class="completed">completed</button>
 	</section>
-		
-		
+
+
 
 	<form class="item" align="center">
 		<input type="text" name="item" required id="item">
 		<button type="submit" id="me">+</button>
 	</form>
 
+	<script type="module" src='./controller.js'>
+	</script>
 
-	</body>
-	<Script type="module" src="./controller.js"></Script>
+</body>
+
 </html>
