@@ -1,0 +1,42 @@
+	body{
+			background-color: #034a49;
+		}
+		#head{
+			height: 30px;
+			color: #034a49;
+			text-align: center;
+			padding: 10px;
+			font-family: algerian;
+		}
+		#head2{
+			height: 30px;
+			color: #034a49;
+			text-align: center;
+			padding: 10px;
+			font-family: algerian;
+			margin-left: 400px;
+			margin-right: 400px;
+			background-color: black;
+		}
+		footer{
+			display: block;
+			width: 100%;
+			background-color:#034a49;
+			text-align: center;
+			margin-top: 300px;
+			margin-bottom: 10px;
+		}
+		#me{
+			margin-left: 400px;
+			margin-right: 400px;
+			text-align: center;
+			background-color: grey;
+		}
+		.report{
+			margin-left: 400px;
+			margin-right: 400px;
+			text-align: center;
+			font-style: italic;
+			color: white;
+			background-color: black;
+		}

@@ -22,14 +22,15 @@ function check(event){
 
 		
 function removeTodo( event ){
-	taskLt.deleteElement(event.id);
-	view(taskLt.allTask());
-		}
+	taskLt.deleteElement(event);
+	view(taskLt.allTask(),check);
+}
 
 
 document.querySelector(".todo-itm").addEventListener("click", a, false);
 function a(params) {
 	if (params.target.tagName === "BUTTON") {
+		
 		removeTodo(params.target.id);
 	}
 	else if (params.target.tagName === "INPUT") {
@@ -46,16 +47,15 @@ function a(params) {
 
 
 		completeButton.addEventListener('click',function(){
-
-			view(taskLt.taskCompleted());
+			view(taskLt.taskCompleted(),check);
 		});
 		activeButton.addEventListener('click',function(){
 			console.log(taskLt.taskActive());
-			view(taskLt.taskActive());
+			view(taskLt.taskActive(),check);
 		});
 		AlButton.addEventListener('click', function(){
 			console.log();
-			view(taskLt.allTask());
+			view(taskLt.allTask(),check);
 		});
 		
 
@@ -65,6 +65,7 @@ function a(params) {
 			let ade =  document.getElementById('item').value;
 			let Task = new task(ade);
 			taskLt.add(Task);
-			view(taskLt.allTask());
+			view(taskLt.allTask(),check);
+			document.getElementById('item').value = "";
 			console.log(taskLt.taskActive());
 		});

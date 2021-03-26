@@ -1,4 +1,5 @@
-export default	function view(ListItems){
+
+export default	function view(ListItems,check){
 			if (ListItems.length === 0) {
 				let todo = document.querySelector(".todo-itm");
 			    todo.innerHTML = "";
@@ -7,7 +8,7 @@ export default	function view(ListItems){
 				    let todo = document.querySelector(".todo-itm");
 			     	todo.innerHTML = "";
 			     	
-				for (var i = ListItems.length - 1; i >= 0; i--) 
+				for (var i = 0 ; i < ListItems.length ; i++)
 				{
 					
 					
@@ -32,7 +33,9 @@ export default	function view(ListItems){
 					todo.appendChild(div)
 					if (ListItems[i].completed == true) {
 						input.checked = true;
+						console.log("ade")
 						check(input);
+						console.log("done")
 						}
 					todo.style.margin = 'auto';
 					todo.style.width= '600px'
