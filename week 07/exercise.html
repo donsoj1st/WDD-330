@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+        .part1 {
+            display: grid;
+            text-align: center;
+            grid-template-columns: auto;
+            background-color: pink;
+            color: #8B0000;
+        }
+
+        .part1>select {
+            color: pink;
+            background-color: #8B0000;
+        }
+
+        .part1>div {
+            display: grid;
+            grid-template-columns: auto;
+        }
+
+        .part2 {
+            display: grid;
+            text-align: center;
+            grid-template-columns: auto;
+            background-color: pink;
+            color: #8B0000;
+        }
+
+        .part2 th,
+        tr {
+            border: 1px solid #8B0000;
+        }
+
+        .part2 button,
+        input {
+            background-color: pink;
+            color: #8B0000;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="part1">
+        <h2>Please choose a country to know there top 10 largest city and population</h2>
+        <select onchange="part1(this.value,cfun)">
+            <option value="">Select a Country</option>
+            <option value="canada.txt">Canada</option>
+            <option value="mexico.txt"> Mexico</option>
+            <option value="russia.txt">Russia</option>
+            <option value="usa.txt">USA</option>
+        </select>
+        <div id="city"></div>
+    </section>
+    <section class="part2">
+        <h2>Please enter your filename below</h2>
+        <form>
+            <label>Filename/uml</label><input type="text" name="url" placeholder="type here..."><button type="button"
+                onclick="part2(cfun2)">Enter</button>
+        </form>
+        <div id="student"></div>
+    </section>
+    <script type="text/javascript">
+        function part1(url, cFuntion) {
+            var country = new XMLHttpRequest();
+            country.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200 && url != "") {
+                    cFuntion(this);
+                }
+            }
+            country.open("GET", url);
+            country.send();
+        }
+        function cfun(xhttp) {
+            var xhrArr = xhttp.responseText.split(/\n/);
+            var text = "<ul>";
+            for (i = 0; i < xhrArr.length; i++) {
+                text += "<li>" + "<pre>" + xhrArr[i] + "</pre>" + "</li>";
+            }
+            text += "<ul>";
+            document.getElementById("city").innerHTML = text;
+
+        }
+
+        function part2(cFuntion) {
+            var input = document.getElementById("input").value;
+            var country = new XMLHttpRequest();
+            country.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    cFuntion(this);
+                } else if (this.status == 404) {
+                    document.getElementById("student").innerHTML = "INVALID UML"
+                }
+            }
+            country.open("GET", input);
+            country.send();
+        }
+        function cfun2(xhttp) {
+            var xhrArr = JSON.parse(xhttp.responseText);
+            var ade = xhrArr.students;
+            var text = "<table>"
+            text += "<tr>" + "<th>" + "First name" + "</th>" + "<th>" + "Last name" + "</th>";
+            text += "<th>" + "Address" + "</th>" + "<th>" + "Major" + "</th>" + "<th>" + "GPA" + "</th>"
+            for (i = 0; i < ade.length; i++) {
+                text += "<tr>";
+                text += "<td>" + xhrArr.students[i].first + "</td>";
+                text += "<td>" + xhrArr.students[i].last + "</td>";
+                text += "<td>City: " + xhrArr.students[i].address.city + "<br>" + "State: " + xhrArr.students[i].address.state + "<br>"
+                    + "ZIP: " + xhrArr.students[i].address.zip + "<br>" + "</td>";
+                text += "<td>" + xhrArr.students[i].major + "</td>";
+                text += "<td>" + xhrArr.students[i].gpa + "</td>";
+                text += "</tr>"
+            }
+            text += "</table>";
+            document.getElementById("student").innerHTML = text;
+
+
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

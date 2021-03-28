@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>note 1</title>
+    <Style>
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        li {
+            list-style-type: none;
+        }
+    </Style>
+</head>
+
+<body style="background-color: #aa5039be;">
+    <H2 align='center'
+        style="background-color: #771f0c9d; border-radius: 10px; height: 100px; padding-top:50px; color:#250c06be ;">WDD
+        330 portportfolio<br>
+        Adekunle Adesoji John<br>
+        WINTER 2021
+    </H2>
+    <section>
+        <H3 style="color: #250c06be;">CHECK THE console </H3>
+
+    </section>
+    <a href="../index.html""><button  style=" background-color:#250c06be; ">back to home</button></a>
+		
+
+
+</body>
+<script>
+    const box = {
+            locked: true,
+            unlock() { this.locked = false; },
+            lock() { this.locked = true; },
+            _content: [],
+            get content() {
+                if (this.locked) throw new Error("Locked!");
+                return this._content;
+            }
+        };
+
+        function withBoxUnlocked(body) {
+            let locked = box.locked;
+            if (!locked) {
+                return body();
+            }
+
+            box.unlock();
+            try {
+                return body();
+            } finally {
+                box.lock();
+            }
+        }
+
+        withBoxUnlocked(function () {
+            box.content.push("gold piece");
+        });
+
+        try {
+            withBoxUnlocked(function () {
+                throw new Error("Pirates on the horizon! Abort!");
+            });
+        } catch (e) {
+            console.log("Error raised:", e);
+        }
+
+        console.log(box.locked);
+// → true
+</script>
+
+</html>
