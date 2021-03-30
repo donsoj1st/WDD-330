@@ -1,7 +1,8 @@
 export default class task{
-			constructor(task, completed = false){
+	constructor(task, completed = false){
 				this.task = task;
 				this.completed = completed;
+				//this.id = id
 			}
 		}
 
@@ -24,13 +25,14 @@ export		class taskList{
 			}
 			allTask (){return this.taskList;}
 			setComplete( id ){
-				this.taskList[id].completed =true;
+				this.taskList[id].completed = true;
 			}
 			setNotComplete( id ){
 				this.taskList[id].completed =false;
 			}
 			deleteElement( id ){
 				this.taskList.splice( id, 1 );
+				
 
 			}
 		}
