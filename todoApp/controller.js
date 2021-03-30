@@ -2,6 +2,7 @@ import view from './view.js';
 import task, {taskList}from './model.js';
 
 const taskLt = new taskList();
+
 const item = document.querySelector(".item");
 function check(event){
 			let me = document.getElementById(event.id);
@@ -23,7 +24,7 @@ function check(event){
 		
 function removeTodo( event ){
 	taskLt.deleteElement(event);
-	view(taskLt.allTask(),check);
+	view(taskLt.allTask());
 }
 
 
@@ -32,6 +33,7 @@ function a(params) {
 	if (params.target.tagName === "BUTTON") {
 		
 		removeTodo(params.target.id);
+
 	}
 	else if (params.target.tagName === "INPUT") {
 		check(params.target);
@@ -47,25 +49,43 @@ function a(params) {
 
 
 		completeButton.addEventListener('click',function(){
-			view(taskLt.taskCompleted(),check);
+			console.log(taskLt.taskCompleted().length)
+			if (taskLt.taskCompleted().length == 0) {
+				document.querySelector(".todo-itm").innerHTML =`<div align="center" style="color: #3c3625">
+			<h1 class="abd" align = "center">No item completed!!! Add new todo's</h1>
+		</div>`
+			}else{view(taskLt.taskCompleted());}
 		});
 		activeButton.addEventListener('click',function(){
-			console.log(taskLt.taskActive());
-			view(taskLt.taskActive(),check);
+			console.log(taskLt.taskActive().length);
+			if (taskLt.taskActive().length == 0) {
+				document.querySelector(".todo-itm").innerHTML = `<div align="center" style="color: #3c3625">
+			<h1 class="abd" align = "center">No active item yet!!! Add new todo's</h1>
+		</div>`
+			} else { view(taskLt.taskActive()); }
+			//view(taskLt.taskActive());
 		});
 		AlButton.addEventListener('click', function(){
-			console.log();
-			view(taskLt.allTask(),check);
+			console.log(taskLt.allTask().length);
+			if (taskLt.allTask().length == 0) {
+				document.querySelector(".todo-itm").innerHTML = `<div align="center" style="color: #3c3625">
+			<h1 class="abd" align = "center">No item yet!!! Add new todo's</h1>
+		</div>`
+			} else { view(taskLt.allTask()); }
+		
+			//view(taskLt.allTask());
 		});
 		
 
 		
 		item.addEventListener('submit',function(event){
 			event.preventDefault();
+
 			let ade =  document.getElementById('item').value;
 			let Task = new task(ade);
 			taskLt.add(Task);
-			view(taskLt.allTask(),check);
+			view(taskLt.allTask());
 			document.getElementById('item').value = "";
+			
 			console.log(taskLt.taskActive());
 		});
