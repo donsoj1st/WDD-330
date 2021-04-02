@@ -2,7 +2,12 @@ import change, { listView,detail}  from './view.js';
 import studentDetails from './model.js'
 
 
-const Performance = []
+let Performance = []
+if (localStorage.getItem("perform", JSON.stringify(Performance))){
+    console.log(JSON.parse(localStorage.getItem("perform", JSON.stringify(Performance))))
+    Performance = JSON.parse(localStorage.getItem("perform", JSON.stringify(Performance)))
+}
+
     function dataUrl() {
         if (document.querySelector(".ade1") && !document.querySelector(".ade2")) {
             document.getElementById("image1").addEventListener("change", function () {
@@ -89,7 +94,7 @@ function validation() {
                     if (confirm("Are you ready to submit")) {
                         console.log
                         Performance.push(performance)
-
+                        localStorage.setItem("perform",JSON.stringify(Performance))
                         alert("registration completed")
                         document.querySelector("#form").reset()
                     }
@@ -161,7 +166,7 @@ function validation() {
                         document.querySelector("#instrument2").value)
                     if (confirm("Are you ready to submit")) {
                         Performance.push(performance)
-
+                        localStorage.setItem("perform", JSON.stringify(Performance))
                         alert("registration completed")
                         document.querySelector("#form").reset()
                     }
