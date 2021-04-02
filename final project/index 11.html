@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Register Piano Students</title>
+	<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body bgcolor="#993399" id="body">
+	<center>
+		<button id="register">Fill Form</Button>
+		<button id = "viewlist">view list</button>
+	
+	</center>
+	<center>
+		<h2>Registration Information</h2>
+	</center>
+	<form id="form">
+		<section id="info1">
+			<center>
+				<div>
+					<h3>Performance Detail</h3>
+				</div>
+			</center>
+			<div class="ade">
+				<div id="ade">
+					<label>Type</label><br>
+					<select name="type" id="type" >
+						<option value="solo">Solo</option>
+						<option value="Duet">Duet</option>
+						<option value="Concerto">Concerto</option>
+					</select>
+				</div>
+				<div id="ade">
+					<label>Building</label><br>
+					<select name="building" id="building">
+						<option>Snow</option>
+						<option>austin</option>
+					</select>
+				</div>
+				<div id="ade">
+					<label>Room</label><br>
+					<input type="text" name="room" id="room" required>
+				</div>
+				<div id="ade">
+					<label>Time</label><br>
+					<input type="datetime-local" name="time" id="time" required>
+				</div>
+			</div>
+		</section>
+		<section id="info2">
+			
+		</section>
+
+		<div id="buttton">
+			<button type="reset">Clear Form</button><button id="submit">Register</button>
+		</div>
+	</form>
+
+	<section  id="list" >
+		
+	</section>
+	<section id="details">
+
+	</section>
+	<script type="module" src='./controller.js'>
+	</script>
+<!--<script type="text/javascript">
+
+	
+	function change(ade) {
+		if (ade == "Duet") {
+			const info2 = document.querySelector("#info2");
+			info2.innerHTML = `<center>
+				<div>
+					<h3>Student Detail</h3>
+				</div>
+			</center>
+			<div class="ade1">
+				<div>Student 1</div>
+				<div>
+					<label>Image</label>
+					<input type="file" accept="image/*" id="image1" required>
+				</div>
+				<div id="ade1">
+					<label>First Name</label><br>
+					<input type="text" name="fname" id="fname" required>
+				</div>
+				<div id="ade1">
+					<label>Last Name</label><br>
+					<input type="text" name="lname" id="lname" required>
+				</div>
+				<div id="ade1">
+					<label>Student ID:</label><br>
+					<input type="text" name="id" id="id" required>
+				</div>
+				<div id="ade1">
+					<label>Skill level</label><br>
+					<select name="skill" id="skill">
+						<option> Beginner</option>
+						<option> Intermediate</option>
+						<option> Pre-advanced</option>
+						<option> Advanced</option>
+					</select>
+				</div>
+				<div id="ade1">
+					<label>Instrument</label><br>
+					<select name="instrument" id="instrument">
+						<option>Piano</option>
+						<option>Voice</option>
+						<option>String</option>
+						<option>Organ</option>,
+						<option>other</option>
+					</select>
+				</div>
+
+			</div>
+			<div class="ade2" id="ade3">
+				<div>Student 2</div>
+				<div>
+					<label>Image</label>
+					<input type="file" accept="image/*" id="image2" required>
+				</div>
+				<div id="ade2">
+					<label>First Name</label><br>
+					<input type="text" name="fname2" id="fname2" required>
+				</div>
+				<div id="ade2">
+					<label>Last Name</label><br>
+					<input type="text" name="lname2" id="lname2" required>
+				</div>
+				<div id="ade2">
+					<label>Student ID:</label><br>
+					<input type="text" name="id2" id="id2" required>
+				</div>
+				<div id="ade2">
+					<label>Skill level</label><br>
+					<select name="skill2" id="skill2" id="skill2">
+						<option> Beginner</option>
+						<option> Intermediate</option>
+						<option> Pre-advanced</option>
+						<option> Advanced</option>
+					</select>
+				</div>
+				<div id="ade2">
+					<label>Instrument</label><br>
+					<select name="instrument2" id="instrument2">
+						<option>Piano</option>
+						<option>Voice</option>
+						<option>String</option>
+						<option>Organ</option>,
+						<option>>other</option>
+					</select>
+				</div>
+
+			</div> `
+
+
+		}
+		else {
+			const info2 = document.querySelector("#info2");
+			info2.innerHTML = `<center>
+				<div>
+					<h3>Student Detail</h3>
+				</div>
+			</center>
+			<div class="ade1">
+				<div>Student 1</div>
+				<div>
+					<label>Image</label>
+					<input type="file" accept="image/*" id="image1" required>
+				</div>
+				<div id="ade1">
+					<label>First Name</label><br>
+					<input type="text" name="fname" id="fname" required>
+				</div>
+				<div id="ade1">
+					<label>Last Name</label><br>
+					<input type="text" name="lname" id="lname" required>
+				</div>
+				<div id="ade1">
+					<label>Student ID:</label><br>
+					<input type="text" name="id" id="id" required>
+				</div>
+				<div id="ade1">
+					<label>Skill level</label><br>
+					<select name="skill" id="skill">
+						<option> Beginner</option>
+						<option> Intermediate</option>
+						<option> Pre-advanced</option>
+						<option> Advanced</option>
+					</select>
+				</div>
+				<div id="ade1">
+					<label>Instrument</label><br>
+					<select name="instrument" id="instrument">
+						<option>Piano</option>
+						<option>Voice</option>
+						<option>String</option>
+						<option>Organ</option>,
+						<option>other</option>
+					</select>
+				</div>
+
+			</div>
+			 `;
+		}
+		//validation()
+		//dataUrl()
+	}
+
+	
+
+
+	class studentDetails {
+		constructor(Fname1, Lname1, Student_id1, picture1, skill1, instrument1, type1, building1, rooom1, time1,
+			Fname2 = '', Lname2 = '', Student_id2 = '', picture2 = '', skill2 = '', instrument2 = '') {
+			this.Fname1 = Fname1;
+			this.Lname1 = Lname1;
+			this.Student_id1 = Student_id1;
+			this.picture1 = picture1;
+			this.skill1 = skill1;
+			this.instrument1 = instrument1;
+			this.type1 = type1;
+			this.building1 = building1;
+			this.rooom1 = rooom1;
+			this.time1 = time1;
+
+			this.Fname2 = Fname2;
+			this.Lname2 = Lname2;
+			this.Student_id2 = Student_id2;
+			this.picture2 = picture2;
+			this.skill2 = skill2;
+			this.instrument2 = instrument2;
+
+
+		}
+	}
+	change(document.querySelector('#type').value)
+	/**********************************************************************
+	 * this eventlistener process image into 
+	 * data url.
+	 * ********************************************************************/
+	function dataUrl() {
+		if (document.querySelector(".ade1") && !document.querySelector(".ade2")) {
+			document.getElementById("image1").addEventListener("change", function () {
+				const image = new FileReader();
+				image.readAsDataURL((document.querySelector("#image1").files[0]));
+				image.addEventListener('load', function () {
+					localStorage.setItem("image1", image.result);
+					console.log(image.result)
+				})
+
+			})
+			
+		}
+		else if (document.querySelector(".ade1") && document.querySelector(".ade2")) {
+			document.getElementById("image1").addEventListener("change", function () {
+				const image = new FileReader();
+				image.readAsDataURL((document.querySelector("#image1").files[0]));
+				image.addEventListener('load', function () {
+					localStorage.setItem("image1", image.result);
+					console.log(image.result)
+				})
+
+			})
+			document.getElementById("image2").addEventListener("change", function () {
+				const image = new FileReader();
+				image.readAsDataURL((document.querySelector("#image2").files[0]));
+				image.addEventListener('load', function () {
+					localStorage.setItem("image2", image.result); 
+					console.log(image.result)
+				})
+
+			})
+			
+		}
+			 
+		
+	}
+dataUrl();
+
+	
+	const Performance = [];
+	function validation() {
+		document.querySelector("#submit").addEventListener('click', function (event) {
+
+			event.preventDefault()
+			
+			
+			if (document.querySelector(".ade1") && !document.querySelector(".ade2")) {
+				console.log("ade")
+				if (document.querySelector("#room").value == '') {
+
+					document.querySelector("#room").focus()
+				}
+				else if (document.querySelector("#time").value == '') {
+
+					document.querySelector("#time").focus()
+				}
+				else if (document.querySelector("#image1").files.length == 0) {
+					alert('Please Choose an image')
+				}
+				else if (document.querySelector("#fname").value == '') {
+
+
+					document.querySelector("#fname").focus()
+				}
+				else if (document.querySelector("#lname").value == '') {
+
+
+					document.querySelector("#lname").focus()
+				}
+				else if (document.querySelector("#id").value == '') {
+					
+					document.querySelector("#id").focus()
+				}else{
+					console.log("it sia ")
+					const performance = new studentDetails(
+						document.querySelector("#fname").value,
+						document.querySelector("#lname").value,
+						document.querySelector("#id").value,
+						localStorage.getItem("image1"),
+						document.querySelector("#skill").value,
+						document.querySelector("#instrument").value,
+						document.querySelector("#type").value,
+						document.querySelector("#building").value,
+						document.querySelector("#room").value,
+						document.querySelector("#time").value
+						)
+						if(confirm("Are you ready to submit")){
+							Performance.push(performance)
+
+							alert("registration completed")
+							document.querySelector("#form").reset()
+						}
+					
+				}
+			}
+
+			if (document.querySelector(".ade1") && document.querySelector(".ade2")) {
+				console.log("asdel")
+				if (document.querySelector("#room").value == '') {
+
+					document.querySelector("#room").focus()
+				}
+				else if (document.querySelector("#time").value == '') {
+
+
+					document.querySelector("#time").focus()
+				}
+				else if (document.querySelector("#image1").files.length == 0) {
+					alert('Please Choose an image')
+					document.querySelector("#image1").focus()
+				}
+				else if (document.querySelector("#fname").value == '') {
+
+
+					document.querySelector("#fname").focus()
+				}
+				else if (document.querySelector("#lname").value == '') {
+
+
+					document.querySelector("#lname").focus()
+				}
+				else if (document.querySelector("#id").value == '') {
+					document.querySelector("#id").focus()
+				}
+				else if (document.querySelector("#image2").files.length == 0) {
+					alert('Please Choose an image')
+				}
+				else if (document.querySelector("#fname2").value == '') {
+
+
+					document.querySelector("#fname2").focus()
+				}
+				else if (document.querySelector("#lname").value == '') {
+
+
+					document.querySelector("#lname2").focus()
+				}
+				else if (document.querySelector("#id2").value == '') {
+					
+					document.querySelector("#id2").focus()
+				}else{
+					
+				const performance = new studentDetails(
+					document.querySelector("#fname").value,
+					document.querySelector("#lname").value,
+					document.querySelector("#id").value,
+					localStorage.getItem("image1"),
+					document.querySelector("#skill").value,
+					document.querySelector("#instrument").value,
+					document.querySelector("#type").value,
+					document.querySelector("#building").value,
+					document.querySelector("#room").value,
+					document.querySelector("#time").value,
+					document.querySelector("#fname2").value,
+					document.querySelector("#lname2").value,
+					document.querySelector("#id2").value,
+					localStorage.getItem("image2"),
+					document.querySelector("#skill2").value,
+					document.querySelector("#instrument2").value)
+					if (confirm("Are you ready to submit")) {
+						Performance.push(performance)
+
+						alert("registration completed")
+						document.querySelector("#form").reset()
+					}
+					
+				}
+				
+
+			}
+		})
+		
+		
+	}
+	
+	
+	
+function listView(performance) {
+	document.querySelector("#form").style.display = "none";
+	const listView = document.querySelector('#list')
+	listView.innerHTML = ""
+	for (let i = 0; i < performance.length; i++) {
+		console.log(performance[i])
+		const view = document.createElement("section")
+		if(performance[i].type1 == "Duet"){
+			view.setAttribute("id", "double")
+			view.setAttribute('class',i);
+			view.innerHTML = `<img src="${performance[i].picture1}" alt="" id="img" class = "${i}">
+        <div id="div" class =${i}>
+            <p class = ${i}>name: ${performance[i].Fname1.toUpperCase()} ${performance[i].Lname1.toUpperCase() }<br></p>
+            <p class =${i}>Student Id: ${performance[i].Student_id1} <br></p>
+            <p class = ${i}>Skill Level: ${performance[i].skill1}<br></p>
+        </div>
+        <img src="${performance[i].picture2}" alt="" id="img" class = ${i}>
+        <div id="div" class = ${i}>
+            <p class = ${i}>name: ${performance[i].Fname2.toUpperCase() } ${performance[i].Lname2.toUpperCase() }<br></p>
+            <p class = ${i}>Student Id: ${performance[i].Student_id2}<br></p>
+            <p class = ${i}>Skill Level: ${performance[i].skill2}<br></p>
+        </div>`
+		}else{
+			view.setAttribute("id", "single")
+			view.setAttribute('class', i);
+			view.innerHTML = `<img src="${performance[i].picture1}" alt="" id="img" class = ${i}>
+        <div id="div" class = ${i}>
+           <p class = ${i}>name: ${performance[i].Fname1.toUpperCase()} ${performance[i].Lname1.toUpperCase() }<br></p>
+           <p class = ${i}>Student Id: ${performance[i].Student_id1}<br></p>
+           <p class = ${i}>Skill Level: ${performance[i].skill1}<br></p>
+        </div>`
+		}
+		listView.appendChild(view)
+	}
+	
+}
+document.querySelector("#viewlist").addEventListener("click", function(){
+	listView(Performance);
+	document.querySelector("#details").innerHTML = ""
+})
+document.querySelector("#register").addEventListener("click",function(){
+
+	document.querySelector("#form").style.display = "grid";
+	document.querySelector("#list").innerHTML = ""
+	document.querySelector("#details").innerHTML=""
+})
+	document.querySelector('#list').addEventListener("click",function(event){
+	
+		document.querySelector("#form").style.display = "none";
+		document.querySelector("#list").innerHTML = ""
+		detail(Performance[Number(event.target.className)]);
+		
+			
+	})
+	document.querySelector("#type").addEventListener('change',function(event){
+		change(document.querySelector('#type').value)
+	})
+	function detail(performance){
+		if (performance.type1 != "Duet") {
+			const detail = document.createElement("section")
+			detail.innerHTML = `<img src="${performance.picture1}" alt="" id="img">
+        <section id="detail">
+            <div>
+                <h3>STUDENT's DETAILS</h3>
+                <p>name: ${performance.Fname1} 
+					${performance.Lname1}<br></p>
+                <p>Student Id: ${performance.Student_id1}<br></p>
+                <p>Skill Level: ${performance.skill1}<br></p>
+                <p>Instrument: ${performance.instrument1}<br></p>
+            </div>
+            <div>
+                <div>
+                    <h3>performance DETAILS</h3>
+                    <p>Type: ${performance.type1}<br></p>
+                    <p>Building: ${performance.building1}<br></p>
+                    <p>Room: ${performance.rooom1}<br></p>
+                    <p>Date/Time: ${performance.time1}<br></p>
+                </div>
+            </div>`
+			detail.setAttribute('id', "deal")
+			document.querySelector("#details").appendChild(detail)
+
+		} else {
+			const detail = document.createElement("section")
+			detail.innerHTML = `<img src="${performance.picture1}" alt="" id="img">
+        <section id="detail">
+            <div>
+                <h3>STUDENT's DETAILS</h3>
+                <p>name: ${performance.Fname1} 
+					${performance.Lname1}<br></p>
+                <p>Student Id: ${performance.Student_id1}<br></p>
+                <p>Skill Level: ${performance.skill1}<br></p>
+                <p>Instrument: ${performance.instrument1}<br></p>
+            </div>
+            <div>
+                <div>
+                    <h3>performance DETAILS</h3>
+                    <p>Type: ${performance.type1}<br></p>
+                    <p>Building: ${performance.building1}<br></p>
+                    <p>Room: ${performance.rooom1}<br></p>
+                    <p>Date/Time: ${performance.time1}<br></p>
+                </div>
+            </div>`
+			detail.setAttribute('id', "deal")
+
+			const detail2 = document.createElement("section")
+			detail2.innerHTML = `<img src="${performance.picture2}" alt="" id="img">
+        <section id="detail">
+            <div>
+                <h3>STUDENT's DETAILS</h3>
+                <p>name: ${performance.Fname2} 
+					${performance.Lname2}<br></p>
+                <p>Student Id: ${performance.Student_id2}<br></p>
+                <p>Skill Level: ${performance.skill2}<br></p>
+                <p>Instrument: ${performance.instrument2}<br></p>
+            </div>
+            <div>
+                <div>
+                    <h3>performance DETAIL2S</h3>
+                    <p>Type: ${performance.type1}<br></p>
+                    <p>Building: ${performance.building1}<br></p>
+                    <p>Room: ${performance.rooom1}<br></p>
+                    <p>Date/Time: ${performance.time1}<br></p>
+                </div>
+            </div>`
+			detail2.setAttribute('id', "deal")
+			document.querySelector("#details").appendChild(detail)
+			document.querySelector("#details").appendChild(detail2)
+		}
+	}
+</script> -->
+	
+</body>
+
+</html>

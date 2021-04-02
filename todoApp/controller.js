@@ -31,8 +31,16 @@ function removeTodo( event ){
 document.querySelector(".todo-itm").addEventListener("click", a, false);
 function a(params) {
 	if (params.target.tagName === "BUTTON") {
+		const tak = taskLt.allTask()
+		for (let i = 0; i < tak.length; i++) {
+			
+			if (tak[i].task === document.querySelectorAll(`p`)[params.target.id].innerHTML){
+				console.log(tak[i].task)
+				removeTodo(i);
+			}
+			
+		}
 		
-		removeTodo(params.target.id);
 
 	}
 	else if (params.target.tagName === "INPUT") {
@@ -87,5 +95,5 @@ function a(params) {
 			view(taskLt.allTask());
 			document.getElementById('item').value = "";
 			
-			console.log(taskLt.taskActive());
+			//console.log(taskLt.taskActive());
 		});

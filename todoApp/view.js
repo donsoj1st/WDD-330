@@ -12,7 +12,7 @@ export default	function view(ListItems){
 				{
 					
 					
-					console.log(ListItems[i].task);
+					//console.log(ListItems[i].task);
 					let div = document.createElement('div');
 					let input = document.createElement('input');
 					let button = document.createElement('button');
