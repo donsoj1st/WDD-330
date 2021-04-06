@@ -1,3 +1,10 @@
+.haed{
+	color: black; 
+	font-family: cursive;
+	animation: head;
+	animation-duration: 10;
+	
+}
 form {
 			border-radius: 10px;
 			border: 1px solid black;
@@ -121,6 +128,13 @@ form {
 		}
 
        @media screen and (min-width:720px )  and (max-width:1200px ) {
+		   .haed{
+	color: black; 
+	font-family: cursive;
+	animation: head;
+	animation-duration: 10;
+	
+}
             form {
 			border-radius: 10px;
 			border: 1px solid black;
